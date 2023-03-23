@@ -3,7 +3,7 @@ import os
 import re
 import shutil
 
-INPUT_DIRECTORY = "/Users/yt/Dropbox/obsidian/publish/"
+INPUT_DIRECTORY = "/Users/yt/Library/CloudStorage/Dropbox/obsidian_PRIVATE/tech/"
 OUTPUT_DIRECTORY = os.path.dirname(__file__) + "/../docs/"
 
 
