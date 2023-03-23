@@ -1,7 +1,4 @@
 # memo vueでchrome extensionを開発する
-[VueでChrome extensionを開発する](https://zenn.dev/iwatos/scraps/4e150827d8fac4)
-
----
 ## Chrome拡張の機能
 公式ドキュメント： [Extensions - Chrome Developers](https://developer.chrome.com/docs/extensions/)
 サンプル集： [GitHub - GoogleChrome/chrome-extensions-samples: Chrome Extensions Samples](https://github.com/GoogleChrome/chrome-extensions-samples)
