@@ -1,0 +1,2 @@
+# vscode ショートカット
+[VSCode ショートカットキーのチートシート for mac | logsuke](https://logsuke.com/app/vscode/vscode-shortcut-mac)

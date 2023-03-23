@@ -1,0 +1,17 @@
+# cli 画像、動画の形式をffmpegで変換する
+画像、動画の形式を変換するCLIツール
+https://www.ffmpeg.org/
+
+
+`ffmpeg -i input.mp4 output.avi`
+のように使う
+
+---
+### Related Notes
+- 
+
+### References
+- 
+
+### Tags
+- `#tool` 
