@@ -1,0 +1,45 @@
+site_name: tota note
+theme:
+  name: material
+  language: ja
+  palette:
+    primary: white
+  font: 
+    text: Noto Sans Japanese
+  logo: ./logo_black.png
+  favicon: ./logo_white.png
+  features:
+    - navigation.expand 
+    - tabs
+    - navigation.top
+    - toc.follow
+    - navigation.tracking
+markdown_extensions: 
+  - attr_list
+  - pymdownx.tabbed
+  - nl2br 
+  - toc:
+      permalink: '#' 
+  - admonition
+  - codehilite:
+      guess_lang: false
+      linenums: false
+  - footnotes
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - pymdownx.tilde
+plugins:
+  - search
+  - roamlinks
+extra_css:
+    - "//fonts.googleapis.com/earlyaccess/notosansjp.css"
+    - "//fonts.googleapis.com/css?family=Open+Sans:600,800"
