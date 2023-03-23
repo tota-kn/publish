@@ -4,7 +4,7 @@ import re
 import shutil
 
 INPUT_DIRECTORY = "/Users/yt/Library/CloudStorage/Dropbox/obsidian_PRIVATE/tech/"
-OUTPUT_DIRECTORY = os.path.dirname(__file__) + "/../docs/"
+OUTPUT_DIRECTORY = os.path.dirname(__file__) + "/../docs/memo/"
 
 
 def read_file_text(file_path: str):
