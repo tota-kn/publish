@@ -42,3 +42,4 @@ resources:
      NewOutput:
        Description: "Description for the output"
        Value: "Some output value"
+```

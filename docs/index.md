@@ -1,5 +1,6 @@
 # Home
 ## About this site
+[tota note](https://tota-kn.github.io/publish/)
 totaの技術的メモをまとめたサイトです。
 各ページのタイトル,URLは頻繁に変わります。
 
@@ -19,7 +20,7 @@ tota
 ソフトウェアエンジニア
 サーバサイド(Java,Python)、フロントエンド(Vue)、アプリ（Flutter）のどれもやったことがあります
 
-###  Links
+##  Links
 - [GitHub](https://github.com/tota-kn)
 - [Zenn](https://zenn.dev/iwatos)
 - [Qiita](https://qiita.com/tota_kn)
