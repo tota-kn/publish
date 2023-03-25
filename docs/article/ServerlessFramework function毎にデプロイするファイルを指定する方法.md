@@ -4,7 +4,8 @@
 1. functions > 個別のfunction > package > include でデプロイしたいファイルを指定
 1. zipファイルなどをデプロイしたい場合は functions > 個別のfunction > package > artifact で指定
 
-```yml:serverless.yml
+`serverless.yml`
+```yml
 service: serverless-sample
 
 frameworkVersion: '2'

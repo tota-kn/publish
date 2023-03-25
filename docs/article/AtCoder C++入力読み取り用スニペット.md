@@ -7,7 +7,8 @@ Atcoder入力読み取り用スニペット
 Code→基本設定→ユーザスニペット
 から設定
 
-```json:cpp.json
+`cpp.json`
+```json
 {
 	"AtCoderInput": {
 		"prefix": "acin",

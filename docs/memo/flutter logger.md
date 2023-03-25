@@ -2,7 +2,8 @@
 [simple_logger](https://pub.dev/packages/simple_logger)がおすすめ
 
 下記ファイルを作成し
-```dart:logger.dart
+`logger.dart`
+```dart
 final isDevlop = true // 環境判別用変数
 final logger = SimpleLogger()
   ..setLevel(

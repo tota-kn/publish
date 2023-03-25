@@ -114,8 +114,8 @@ export default defineConfig({
 
 
 src/pages/popupフォルダを作り以下を追加する。
-App.vue
-```vue:App.vue
+`App.vue`
+```vue
 <script setup lang="ts">
 import HelloWorld from '../../components/HelloWorld.vue';
 </script>
@@ -125,8 +125,8 @@ import HelloWorld from '../../components/HelloWorld.vue';
 </template>
 ```
 
-index.html
-```html:index.html
+`index.html`
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -144,8 +144,8 @@ index.html
 </html>
 ```
 
-main.ts
-```ts:main.ts
+`main.ts`
+```ts
 import { createApp } from 'vue'
 import App from './App.vue'
 
@@ -186,8 +186,8 @@ export default defineConfig({
 ```
 
 src/pages/option配下にApp.vue,index.html,main.tsを作成する。
-App.vue
-```vue:App.vue
+`App.vue`
+```vue
 <script setup lang="ts">
 import HelloWorld from '../../components/HelloWorld.vue';
 </script>
@@ -197,8 +197,8 @@ import HelloWorld from '../../components/HelloWorld.vue';
 </template>
 ```
 
-index.html
-```html:index.html
+`index.html`
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -216,8 +216,8 @@ index.html
 </html>
 ```
 
-main.ts
-```ts:main.ts
+`main.ts`
+```ts
 import { createApp } from 'vue'
 import App from './App.vue'
 

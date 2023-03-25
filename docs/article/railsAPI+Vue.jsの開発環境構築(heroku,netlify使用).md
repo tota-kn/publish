@@ -19,9 +19,9 @@ heroku: 7.22.7 darwin-x64 node-v11.10.1
 railsアプリを作成する
 まずはAPI用のrailsプロジェクトを作成
 
-```terminal
-$ rails new ***-api --api
-$ cd ***-api
+```sh
+rails new ***-api --api
+cd ***-api
 ```
 gemファイルの以下を変更し bundle install します。
 生成時からの修正点は以下
@@ -33,7 +33,8 @@ gemファイルの以下を変更し bundle install します。
 * rack-corsを追加
     * クロスドメイン対策（後述）で使用
 
-```ruby:Gemfile
+`Gemfile`
+```ruby
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -70,7 +71,8 @@ originsを'*'に修正します。
 先ほどのrack-corsの追加と本設定をしないとvueからAPIを呼び出した際にエラーが発生します。
 [(参考)【Ruby on Rails】「No 'Access-Control-Allow-Origin' header is present on the requested resource」を回避する.](https://qiita.com/residenti/items/3a03e5e0268b354284b7)
 
-```ruby:config/initializers/cors.rb
+`config/initializers/cors.rb`
+```ruby
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
     origins '*' `#コメントアウトを解除し、ここを'*'に修正`
@@ -83,14 +85,14 @@ end
 
 jsonで渡す用のデータを作成　今回はサンプルとしてUserテーブルを作ります
 
-```terminal
-$ rails generate scaffold user name:string email:string password_digest:string
-$ rails db:migrate
+```sh
+rails generate scaffold user name:string email:string password_digest:string
+rails db:migrate
 ```
 適当なデータを入れておきましょう
 
-```terminal
-$ rails console
+```sh
+rails console
 >user1 = User.new(name:"hoge_name",email:"hoge_email",password_digest:"hoge_pass")
 >user1.save
 >user2 = User.new(name:"fuga_name",email:"fuga_email",password_digest:"fuga_pass")
@@ -101,16 +103,16 @@ $ rails console
 
 取得できるか確認します。
 
-```terminal
-$ curl -X GET  -H 'Content-Type:application/json' http://0.0.0.0:3000/users
+```sh
+curl -X GET  -H 'Content-Type:application/json' http://0.0.0.0:3000/users
 `#結果表示`
 ```
 以上ができたらherokuにアップロードしておきましょう。
 
-```terminal
+```sh
 `#commit,herokuログイン後`
-$ git push heroku master
-$ heroku run rake db:migrate `#herokuのdb準備`
+git push heroku master
+heroku run rake db:migrate `#herokuのdb準備`
 ```
 
 herokuにアップロードされたアドレス　https://＊＊＊.herokuapp.com/users
@@ -121,22 +123,23 @@ herokuにアップロードされたアドレス　https://＊＊＊.herokuapp.c
 Vueプロジェクトを作成します。作成後はとりあえず動くか確認しましょう。
 プリセット設定はなんでも大丈夫だと思います。
 
-```terminal
-$ vue create *** 
+```sh
+vue create *** 
 ~~プリセット設定~~
-$ cd ***
-$ yarn serve　`#動作確認`
+cd ***
+yarn serve　`#動作確認`
 ```
 
 今回はサンプルとして初期表示ページでAPIからjsonを取得して表示したいと思います。
 json取得のためaxiosをインストールします
 
-```terminal
-$ npm install axios --save
+```sh
+npm install axios --save
 ```
 次にsrc/components/HelloWorld.vueを以下のように編集します。
 
-```vue:src/components/HelloWorld.vue
+`src/components/HelloWorld.vue`
+```vue
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
@@ -175,18 +178,20 @@ axios.getでlocalhostを参照しているので当然ですね。
 まずは開発環境の環境変数を設定します
 vueプロジェクトのフォルダに環境変数を設定するフォルダを作成します。
 
-```terminal:
-$ touch .env.development
+```sh
+touch .env.development
 ```
 内容に以下を追記します。
 
-```:.env.development
+`.env.development`
+```
 VUE_APP_BASE_API=http://localhost:3000/
 ```
 
 HelloWorld.vueのaxios.getについて、参照先を環境変数から取得するよう修正します
 
-```js:src/components/HelloWorld.vue
+`src/components/HelloWorld.vue`
+```js
   mounted () {
     axios.get(process.env.VUE_APP_BASE_API + "users").then(response => (this.info = response))
   }
@@ -199,7 +204,8 @@ yarn serveで起動した時は.env.developmentから値を取得します。
 後述しますが、環境変数には他の人に見られたくないものを書いたりするので
 gitignoeに忘れずに登録しておきましょう。
 
-```:gitignore
+`.gitignore`
+```
 .env.*
 ```
 
@@ -219,7 +225,8 @@ VUE_APP_BASE_API に https://(herokuで設定したアドレス).herokuapp.com/�
 application_controllers.rbに認証機能を追記します。
 これによりいずれのアクションが起動する際も認証が必要となります。
 
-```ruby:app/controllers/application_controllers.rb
+`app/controllers/application_controllers.rb`
+```ruby
 class ApplicationController < ActionController::API
     include ActionController::HttpAuthentication::Token::ControllerMethods
     before_action :authenticate
@@ -235,28 +242,32 @@ end
 API_TOKENは環境変数で設定します。
 今回は先ほどと違い、自身の端末に設定します。
 
-```terminal
+```sh
 `#.bash_profileを編集`
-$ emacs ~/.bash_profile
+emacs ~/.bash_profile
 ```
-```:~/.bash_profile
+
+`~/.bash_profile`
+```
 `#以下を追記`
 export　API_TOKEN=(任意の予測不可能な文字列)
 ```
-```terminal
+
+```sh
 `#変更を反映`
-$ source ~/.bash_profile
+source ~/.bash_profile
 ```
 
 本番環境(heroku)でも同様の文字列を環境変数に設定します。
 
-```terminal
-$ heroku config:set API_TOKEN=xxxxx
+```sh
+heroku config:set API_TOKEN=xxxxx
 ```
 
 次にvueプロジェクトで同様のトークンキーを設定します。
 
-```:.env.development
+`.env.development`
+```
 VUE_APP_BASE_API=http://localhost:3000/
 VUE_APP_API_TOKEN=xxxxx
 ```
@@ -267,7 +278,8 @@ netlifyでも同様のトークンキーを設定します。
 最後にHelloWorld.vueのmountedを編集します
 headersにトークンを追加します。
 
-```js:src/components/HelloWorld.vue
+`src/components/HelloWorld.vue`
+```js
   mounted () {
     axios
       .get(process.env.VUE_APP_BASE_API + "users",{

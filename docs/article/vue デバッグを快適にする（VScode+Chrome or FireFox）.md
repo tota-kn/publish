@@ -17,8 +17,8 @@ Chrome または FireFox
 インストール後、vue-cli3で作成したプロジェクトフォルダ直下に
 vue.config.js を作成し以下を記述する。
 
-
-```javascript:vue.config.js
+`vue.config.js`
+```javascript
 module.exports = {
   configureWebpack: {
     devtool: 'source-map'
@@ -30,8 +30,8 @@ VSCodeのデバッグビュー→歯車アイコンをクリックしlaunch.json
 以下を記述する。
 ![スクリーンショット 2019-03-01 22.13.16.png](https://qiita-image-store.s3.amazonaws.com/0/230281/b5a94378-3bf0-b5c0-b17d-de85a371f3cd.png)
 
-
-```json:launch.json
+`launch.json`
+```json
 {
   "version": "0.2.0",
   "configurations": [

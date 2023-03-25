@@ -1,6 +1,8 @@
 # java オブジェクトのリストを任意の順番で並べ替える
 自作のオブジェクト`MyObject`のリストがあり、それを任意の順番で並べ替えたいとします。
-```java:MyObject.java
+
+`MyObject.java`
+```java
 public class MyObject {  
     String field;  
     
@@ -14,7 +16,9 @@ public class MyObject {
 
 `Comparator<MyObject>`を実装した並び順定義のクラス`MySort`を作成します。
 `order()`の処理で、`MyObject`のフィールド値から並び替え優先度を示す数値を算出し、それを利用して`compare()`を実装します。
-```java:MySort.java
+
+`MySort.java`
+```java
 public class MySort implements Comparator<MyObject> {  
     @Override  
     public int compare(MyObject o1, MyObject o2) {  
@@ -38,7 +42,8 @@ public class MySort implements Comparator<MyObject> {
 `stream().sorted((o1, o2) -> new MySort().compare(o1, o2))`としてやれば`MySort`で定義した順番で並べ替えられます。
 `MySort`の`order()`の処理を変えることで複数フィールドを考慮した並び順も定義できます。
 
-```java:main.java
+`main.java`
+```java
 public static void main(String[] args){
     List<MyObject> myObjects = new ArrayList<>(Arrays.asList(  
         new MyObject("lemon"),  

@@ -1,5 +1,6 @@
 # flutter 静的解析でfreezedの生成ファイルを外す
-```yaml:analysis_options.yaml
+`analysis_options.yaml`
+```yaml
 analyzer:  
   exclude:  
     - "lib/datasource/model/**.g.dart"  

@@ -1,5 +1,6 @@
 # node npm(yarn) install する際のnodeバージョンを限定する
-```json:package.json
+`package.json`
+```json
 {
   "engines": {
     "node": "16.x"
@@ -8,7 +9,9 @@
 ```
 
 npmの場合は以下の設定をした.npmrcも配置すると、npmが指定したバージョンで無いときはエラーになる
-```.npmrc:.npmrc
+
+`.npmrc`
+```.npmrc
 engine-strict=true
 ```
 

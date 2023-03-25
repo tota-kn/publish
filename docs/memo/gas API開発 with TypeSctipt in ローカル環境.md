@@ -56,7 +56,8 @@ git init
 touch .gitignore
 ```
 
-```sh:gitignore
+`.gitignore`
+```sh
 dist/**
 node_modules/**
 .clasp.json
@@ -94,7 +95,8 @@ yarn add typescript
 
  `tsconfig.json` をプロジェクト直下に作成します。
 こちらの設定に詳しい方はご自由に内容を変更しても大丈夫です。
-```json:tsconfig.json
+`tsconfig.json`
+```json
 {
     "inlude": [
         "src/**/*"
@@ -112,7 +114,8 @@ yarn add typescript
 
 プロジェクト用ディレクトリの直下にソースコード`src`ディレクトリを作成し、
 その配下に`main.ts`ファイルとしてhelloworldのコードを配置します。
-```ts:src/main.ts
+`tsconfig.json`
+```ts
 console.log("hello gas world!!")
 ```
 
@@ -141,7 +144,8 @@ yarn add eslint prettier @typescript-eslint/eslint-plugin @typescript-eslint/par
 
 以下の`.eslintrc.json` `.prettierrc.json` をディレクトリ直下に作成します。
 こちらの設定に詳しい方はご自由に内容を変更しても大丈夫です。
-```json:.eslintrc.json
+`.eslintrc.json`
+```json
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
@@ -156,7 +160,9 @@ yarn add eslint prettier @typescript-eslint/eslint-plugin @typescript-eslint/par
   ]
 }
 ```
-```json:.prettierrc.json
+
+`.prettierrc.json`
+```json
 {
   "trailingComma": "es5",
   "tabWidth": 4,
@@ -174,7 +180,8 @@ ESLint、prettier導入もこれで完了です。
 
 ESLint、prettierで自動でコードを整形してくれるコマンドが便利なので、
 簡単に実行しやすいようにpackage.jsonにscriptコマンドを追加しておきましょう
-```diff json:package.json
+`package.json`
+```diff json
 {
 +  "scripts": {
 +    "lintfix": "prettier --write './src/**/*.{js,ts}' && eslint --fix './src/**/*.{js,ts}'",
@@ -229,7 +236,8 @@ https://script.google.com/home
 実はGASはtypescriptの状態でpushをしても自動でjsにコンパイルしてプッシュしてくれるのですが、それだとtsconfigのコンパイル設定が適用できないため、ローカルでjsコンパイルをした結果のdistフォルダをプッシュするようにします
 
 まず`.clasp.json`にdistフォルダをpush対象とする設定を追加します
-```diff json:.clasp.json
+`.clasp.json`
+```diff json
 {
   "scriptId": "<固有のスクリプトID>"
 + "rootDir": "dist"
@@ -239,7 +247,9 @@ https://script.google.com/home
 push対象の中には`appscript.json`を含める必要があるため、毎回`appscript.json`も`dist`フォルダに配置する必要があります。
 コンパイル時に毎回配置するコマンドを打つのは面倒なので`package.json`にてコンパイル用のコマンドを作成しましょう(compile)。
 さらにフォーマット〜コンパイル〜プッシュを同時にやるコマンドも作ってしまいます（push）。
-```diff json:package.json
+
+`package.json`
+```diff json
 {
   "scripts": {
     "lintfix": "prettier --write './src/**/*.{js,ts}' && eslint --fix './src/**/*.{js,ts}'",
@@ -264,7 +274,8 @@ GASでAPIを作成する場合、利用できるHTTPメソッドはGETとPOSTの
 URLアクセスした時にGETの場合は`doGet`、POSTの場合は`doPost`関数が実行されるのでそれぞれ用意する必要があります。
 
 なのでまずmain.tsに以下の内容を記述します。
-```ts: main.ts
+`main.ts`
+```ts
 //eslint-disable-next-line @typescript-eslint/no-unused-vars
 function doGet(e: Record<string, unknown>) {
     const result = executeDoGet(e)
@@ -309,7 +320,8 @@ GASのデプロイにはウェブアプリ、実行可能API、ライブラリ�
 誰でもURLを叩けばJson結果を取得できるようにしたい場合はウェブアプリとしてデプロイする必要があります。
 `appscript.json`にウェブアプリとしてデプロイする設定を追加します
 
-```diff json:appscript.json
+`appscript.json`
+```diff json
 {
   "timeZone": "America/New_York",
   "dependencies": {
@@ -452,7 +464,8 @@ clasp setting projectId <作成したGCPのプロジェクトID>
 これでclasp run/clasp logsを使う環境が整いました。
 しかしclasp runを実行するにはウェブアプリではなく実行可能APIとしてデプロイしておく必要があるのでその設定を入れます。
 まずappscriot.jsonに実行可能APIとデプロイ設定をを追加します。
-```diff json:appscriot.json
+`appscriot.json`
+```diff json
 +  "executionApi": {
 +    "access": "ANYONE"
 +  }

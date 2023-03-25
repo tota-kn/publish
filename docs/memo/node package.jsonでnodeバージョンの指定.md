@@ -4,7 +4,8 @@ package.jsonにengines要素でノードバージョンを指定しておくと
 指定nodeではない場合は警告が出る
 
 ## 例
-```json:package.json
+`package.json`
+```json
 {
   "name": "my-module",
   "version": "1.0.0",

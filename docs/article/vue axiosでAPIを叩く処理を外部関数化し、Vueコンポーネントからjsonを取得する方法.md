@@ -7,7 +7,8 @@ callback関数を用いることでjsonを取得できる。
 ## やり方
 以下のjsファイルを作成
 
-```js:Api.js
+`Api.js`
+```js
 import axios from "axios"
 
 function callApi(url, callback) {
@@ -28,7 +29,8 @@ export default {callFreadApi}
 
 Vueコンポーネントからの呼び出しは以下
 
-```vue:component.vue
+`component.vue`
+```vue
 <template>
   <p>{{ info }}</p>
 </template>

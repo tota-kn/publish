@@ -3,7 +3,8 @@
 
 ## 共通
 以下のファイルを作成
-```dart:lib/flavor.dart
+`lib/flavor.dart`
+```dart
 enum FlavorType {
   dev, // 開発環境
   cus, // 検収環境
@@ -28,7 +29,8 @@ class Flavor {
 
 ```
 
-```dart:lib/main/main_dev.dart
+`lib/main/main_dev.dart`
+```dart
 import 'package:app/flavor.dart';
 import 'package:app/main.dart';
 
@@ -38,7 +40,8 @@ void main() {
 }
 ```
 
-```dart:lib/main/main_cus.dart
+`lib/main/main_cus.dart`
+```dart
 import 'package:app/flavor.dart';
 import 'package:app/main.dart';
 
@@ -48,7 +51,8 @@ void main() {
 }
 ```
 
-```dart:lib/main/main_prd.dart
+`lib/main/main_prd.dart`
+```dart
 import 'package:app/flavor.dart';
 import 'package:app/main.dart';
 
@@ -58,7 +62,8 @@ void main() {
 }
 ```
 
-```dart:lib/main.dart
+`lib/main.dart`
+```dart
 Future<void> startApp() async {
   runApp(<任意の画面Widget>);
 }
@@ -70,7 +75,8 @@ Future<void> startApp() async {
 
 ## Android
 以下を追記
-```gradle:android/app/build.gradle
+`android/app/build.gradle`
+```gradle
 android {
     flavorDimensions "server"
     productFlavors {

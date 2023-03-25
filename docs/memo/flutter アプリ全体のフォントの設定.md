@@ -1,11 +1,12 @@
 # flutter アプリ全体のフォントの設定
-```yaml:pubspec.yaml
+`pubspec.yaml`
+```yaml
 dependencies:
   flutter_localizations:
     sdk: flutter         
 ```
 を追加し、
-```
+```dart
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 const locale = Locale("ja", "JP");

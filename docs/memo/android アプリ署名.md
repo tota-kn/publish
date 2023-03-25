@@ -38,13 +38,15 @@ KEYSTORE_KEY_PASSWORD
 
 
 propertiesファイルを作成しておき、それを読み込むようにするとよい
-```properties:keystore.properties
+`keystore.properties`
+```properties
 STORE_PASSWORD=XXXX
 KEY_ALIAS=XXX
 KEY_PASSWORD=XXX
 ```
 
-```gradle:build.gradle
+`build.gradle`
+```gradle
 def KEYSTORE_STORE_PASSWORD =''  
 def KEYSTORE_KEY_ALIAS = ''  
 def KEYSTORE_KEY_PASSWORD = ''  

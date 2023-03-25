@@ -17,7 +17,8 @@ cd python-env
 ```
 
 2. poetry環境準備
-```toml:pyproject.toml
+`pyproject.toml`
+```toml
 [tool.poetry]
 name = "python-env"
 version = "0.1.0"
@@ -60,7 +61,8 @@ max-line-length = "88"
 .vscode/extensions.json
 を作成する
 
-```json:.vscode/settings.jon
+`.vscode/settings.jon`
+```json
 {
     "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
 
@@ -108,7 +110,8 @@ max-line-length = "88"
 }
 ```
 
-```json:.vscode/extensions.jon
+`.vscode/extensions.jon`
+```json
 {
     "recommendations": [
         "njpwerner.autodocstring",

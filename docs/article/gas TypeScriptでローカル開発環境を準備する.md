@@ -26,7 +26,8 @@ cd gas-project-directory
 以下のpackage.jsonをフォルダ直下に作成後、yarnかnpmでinstallを実行します
 GASのローカル開発で用いる`clasp`のほか、`typescript` `eslint` `prettier`を導入してます。
 
-```json:gas-project-directory/package.json
+`gas-project-directory/package.json`
+```json
 {
   "name": "<プロジェクト名>",
   "version": "1.0.0",
@@ -90,7 +91,8 @@ https://github.com/google/clasp/blob/a556599e78bdc3f168e3bb5cdc2ff0a55909f6f5/RE
 まずソースコードはディレクトリ直下に`src`ディレクトリを作成してその配下に移動してください。
 その後`.eslintrc.json` `.prettierrc.json` `tsconfig.json` をディレクトリ直下に作成します。
 
-```json:.eslintrc.json
+`.eslintrc.json`
+```json
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
@@ -105,7 +107,9 @@ https://github.com/google/clasp/blob/a556599e78bdc3f168e3bb5cdc2ff0a55909f6f5/RE
   ]
 }
 ```
-```json:.prettierrc.json
+
+`.prettierrc.json`
+```json
 {
   "trailingComma": "es5",
   "tabWidth": 4,
@@ -113,7 +117,9 @@ https://github.com/google/clasp/blob/a556599e78bdc3f168e3bb5cdc2ff0a55909f6f5/RE
   "singleQuote": true
 }
 ```
-```json:tsconfig.json
+
+`tsconfig.json`
+```json
 {
     "inlude": [
         "src/**/*"

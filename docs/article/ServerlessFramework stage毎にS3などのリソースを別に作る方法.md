@@ -5,7 +5,8 @@ custom > resourcePrefix : `${self:provider.stage}`を使った値
 と設定して
 BucketNameを `${self:custom.resourcePrefix}-resource`とする
 
-```yml:serverles..yml
+`serverles.yml`
+```yml
 service: serverless-sample
 
 frameworkVersion: '2'

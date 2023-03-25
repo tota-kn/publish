@@ -18,7 +18,8 @@ hugo server -D ## ドラフト含めてローカルで確認
 
 ## Netlify設定
 netlify.tomlを作成してリポジトリにpush
-```toml:netlify.toml
+`netlify.toml`
+```toml
 [build]
 publish = "public"
 command = "hugo --theme=ananke --gc --minify"

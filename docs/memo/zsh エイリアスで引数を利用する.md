@@ -1,5 +1,6 @@
 # zsh エイリアスで引数を利用する
-```sh:zshrc
+`.zshrc`
+```sh
 alias hoge='(){echo $1 $2!!}'
 ## $ hoge hello world
 ## > hello world
