@@ -9,8 +9,8 @@ theme:
   logo: ./logo_black.png
   favicon: ./logo_white.png
   features:
-    - navigation.expand 
-    - tabs
+    - navigation.tabs
+    - navigation.expand
     - navigation.top
     - toc.follow
     - navigation.tracking
