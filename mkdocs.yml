@@ -41,5 +41,5 @@ plugins:
   - search
   - roamlinks
 extra_css:
-    - "//fonts.googleapis.com/earlyaccess/notosansjp.css"
-    - "//fonts.googleapis.com/css?family=Open+Sans:600,800"
+  - "//fonts.googleapis.com/earlyaccess/notosansjp.css"
+  - "//fonts.googleapis.com/css?family=Open+Sans:600,800"
