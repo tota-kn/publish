@@ -34,10 +34,19 @@ cd vite-project
 npm i @crxjs/vite-plugin@beta -D
 ```
 
+公式に従ってmanifest.jsonを作成する
+```json
+{
+    "manifest_version": 3,
+    "name": "CRXJS Vue Vite Example",
+    "version": "1.0.0",
+    "action": { "default_popup": "index.html" }
+}
+```
+
+
 vite.configをの内容を以下に変更
-`Cannot find module './manifest.json'. Consider using '--resolveJsonModule' to import module with '.json' extension.ts(2732)`
-のエラーが出るが解決法がわからない。一旦無視でも動く
-```vite.config
+```ts
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { crx } from '@crxjs/vite-plugin'
@@ -51,15 +60,28 @@ export default defineConfig({
 })
 ```
 
+`Cannot find module './manifest.json'. Consider using '--resolveJsonModule' to import module with '.json' extension.ts(2732)`
+のエラーが出る。tsconfig.jsonの `resolveJsonModule` をtrueにしても解決しないため、jsonのimportでなく変数としてmanifestを定義する
 
-manifest.jsonを作成する
-```json
-{
-    "manifest_version": 3,
-    "name": "CRXJS Vue Vite Example",
-    "version": "1.0.0",
-    "action": { "default_popup": "index.html" }
+```ts
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import { crx, ManifestV3Export } from '@crxjs/vite-plugin'
+import { resolve } from 'path'
+
+const manifest: ManifestV3Export = {
+  manifest_version: 3,
+  name: "CRXJS Vue Vite Example",
+  version: "1.0.0",
+  action: {default_popup: "index.html"}
 }
+
+export default defineConfig({
+  plugins: [
+    vue(),
+    crx({ manifest }),
+  ]
+})
 ```
 
 
