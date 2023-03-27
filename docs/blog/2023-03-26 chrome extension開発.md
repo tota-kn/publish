@@ -1,4 +1,4 @@
-# 2023-03-26
+# 2023-03-26 chrome extension開発
 ## [[WIP vueでchrome extensionを開発する]]
 vite.configの
 `import manifest from '../manifest.json' assert { type: 'json' }` で
