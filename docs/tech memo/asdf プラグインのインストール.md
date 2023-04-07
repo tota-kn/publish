@@ -1,5 +1,4 @@
 # asdf プラグインのインストール
-asdf## プラグインのインストール
 ### 利用可能なプラグインリスト
 `asdf plugin list all`
 
@@ -29,11 +28,5 @@ asdf## プラグインのインストール
 `asdf global python <version or latest> `
 
 ---
-## Related Notes
-- 
-
 ## References
 - [[asdf 導入]]
-
-## Tags
-- `#cli` 
