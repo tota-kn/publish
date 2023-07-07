@@ -1,4 +1,4 @@
-# vim 環境設定
+# vim 環境構築
 ## 設定ファイルの作成
 ### vimrc
 vimの操作設定を記述するファイル
@@ -32,19 +32,8 @@ set background=dark
 ```
 
 ## エディター設定
-### [[JetBrains]]
+### [[about JetBrains]]
 [[jetbrains vimを利用]]
 
 ### [[about VSCode]]
 [[vscode vimを利用する]]
-
-
----
-## Related Notes
-- [[vim コマンド一覧]]
-
-## References
-- 
-
-## Tags
-- `#vim` 

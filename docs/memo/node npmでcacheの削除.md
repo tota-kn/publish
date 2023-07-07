@@ -1,4 +1,4 @@
-# node npmでcacheの削除
+# node npmでcacheの削除
 
 ## すべてのキャッシュ削除
 `npm-cache clean --force`

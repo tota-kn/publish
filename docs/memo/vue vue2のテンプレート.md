@@ -1,4 +1,4 @@
-# vue vue2のテンプレート
+# vue vue2のテンプレート
 ```vue
 <template>
 	<div> Hello Vue!</div>

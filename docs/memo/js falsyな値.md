@@ -1,4 +1,4 @@
-# js boolean評価
+# js falsyな値
 ## false
 ```js
 var bNoParam = Boolean();
@@ -19,4 +19,5 @@ var bObjProto = Boolean({});
 ```
 
 ## 参考
+- [Falsy (偽値) - MDN Web Docs 用語集: ウェブ関連用語の定義 | MDN](https://developer.mozilla.org/ja/docs/Glossary/Falsy)
 - [Boolean - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Boolean)

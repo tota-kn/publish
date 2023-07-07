@@ -1,4 +1,4 @@
-# node npmのscriptで引数を利用する
+# node npmのscriptで引数を利用する
 
 package.json
 ```json

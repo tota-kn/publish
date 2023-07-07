@@ -1,4 +1,4 @@
-# cli 画像、動画の形式をffmpegで変換する
+# cli 画像、動画の形式をffmpegで変換する
 画像、動画の形式を変換するCLIツール
 https://www.ffmpeg.org/
 

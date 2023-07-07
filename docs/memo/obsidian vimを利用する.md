@@ -7,13 +7,3 @@
 `<Vaultディレクトリ>/.obsidian.vimrc` が参照される。
 `.vimrc`を使っている場合は`source ~/.vimrc`と記述すると設定が参照される。
 
-
----
-## Related Notes
-- 
-
-## References
-- 
-
-## Tags
-- `#notag`

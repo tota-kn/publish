@@ -1,5 +1,5 @@
 # jetbrains vimを利用
-[[JetBrains]]では`IdeaVim`プラグインを入れることでvimが利用できる。
+[[about JetBrains]]では`IdeaVim`プラグインを入れることでvimが利用できる。
 
 ## プラグインの導入
 

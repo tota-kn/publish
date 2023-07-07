@@ -1,4 +1,4 @@
-# node root権限でnpm installするとPermission deniedエラーで怒られる時
+# node root権限でnpm installするとPermission deniedエラーで怒られる時
 `npm install`の前に`npm config set unsafe-perm true`する
 
 ## Link

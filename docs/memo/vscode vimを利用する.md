@@ -25,12 +25,5 @@ Vimプラグインをインストールする
   ]
 ```
 
----
-## Related Notes
-- 
-
 ## References
 - https://www.pc-gear.com/post/vscode-vim-vimrc/
-
-## Tags
-- `#vscode` 

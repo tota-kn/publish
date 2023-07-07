@@ -21,12 +21,6 @@
 
 
 ---
-## Related Notes
-- 
-
 ## References
 - https://support.apple.com/ja-jp/guide/terminal/trmlshtcts/mac
 - https://qiita.com/akito/items/d09a2d5b36d4cf7bac6d
-
-## Tags
-- `#cli`

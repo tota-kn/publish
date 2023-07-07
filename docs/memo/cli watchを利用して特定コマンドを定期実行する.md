@@ -1,4 +1,4 @@
-# cli watchを利用して特定コマンドを定期実行する
+# cli watchを利用して特定コマンドを定期実行する
 ## インストール
 ```sh
 brew install watch
